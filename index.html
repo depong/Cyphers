@@ -1,509 +1,703 @@
 <!DOCTYPE html>
 <html lang="kr">
+
 <head>
 	<meta charset="utf-8" />
 	<title>Cyphers Emblem Simulation</title>
 	<style>
-	@import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
-	@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-	figure.snip1384 {
-	  font-family: 'Raleway', Arial, sans-serif;
-	  position: relative;
-	  overflow: hidden;
-	  margin: 10px;
-	  min-width: 230px;
-	  max-width: 315px;
-	  width: 100%;
-	  color: #ffffff;
-	  text-align: left;
-	  font-size: 16px;
-	  background-color: #000000;
-	}
-	figure.snip1384 * {
-	  -webkit-box-sizing: border-box;
-	  box-sizing: border-box;
-	  -webkit-transition: all 0.35s ease;
-	  transition: all 0.35s ease;
-	}
-	figure.snip1384 img {
-	  max-width: 100%;
-	  backface-visibility: hidden;
-	  vertical-align: top;
-	}
-	figure.snip1384:after,
-	figure.snip1384 figcaption {
-	  position: absolute;
-	  top: 0;
-	  bottom: 0;
-	  left: 0;
-	  right: 0;
-	}
-	figure.snip1384:after {
-	  content: '';
-	  background-color: rgba(0, 0, 0, 0.65);
-	  -webkit-transition: all 0.35s ease;
-	  transition: all 0.35s ease;
-	  opacity: 0;
-	}
-	figure.snip1384 figcaption {
-	  z-index: 1;
-	  padding: 40px;
-	}
-	figure.snip1384 h3,
-	figure.snip1384 .links {
-	  width: 100%;
-	  margin: 5px 0;
-	  padding: 0;
-	}
-	figure.snip1384 h3 {
-	  line-height: 1.1em;
-	  font-weight: 700;
-	  font-size: 1.4em;
-	  text-transform: uppercase;
-	  opacity: 0;
-	}
-	figure.snip1384 p {
-	  font-size: 0.8em;
-	  font-weight: 300;
-	  letter-spacing: 1px;
-	  opacity: 0;
-	  top: 50%;
-	  -webkit-transform: translateY(40px);
-	  transform: translateY(40px);
-	}
-	figure.snip1384 i {
-	  position: absolute;
-	  bottom: 10px;
-	  right: 10px;
-	  padding: 20px 25px;
-	  font-size: 34px;
-	  opacity: 0;
-	  -webkit-transform: translateX(-10px);
-	  transform: translateX(-10px);
-	}
-	figure.snip1384 a {
-	  position: absolute;
-	  top: 0;
-	  bottom: 0;
-	  left: 0;
-	  right: 0;
-	  z-index: 1;
-	}
-	figure.snip1384:hover img,
-	figure.snip1384.hover img {
-	  zoom: 1;
-	  filter: alpha(opacity=50);
-	  -webkit-opacity: 0.5;
-	  opacity: 0.5;
-	}
-	figure.snip1384:hover:after,
-	figure.snip1384.hover:after {
-	  opacity: 1;
-	  position: absolute;
-	  top: 10px;
-	  bottom: 10px;
-	  left: 10px;
-	  right: 10px;
-	}
-	figure.snip1384:hover h3,
-	figure.snip1384.hover h3,
-	figure.snip1384:hover p,
-	figure.snip1384.hover p,
-	figure.snip1384:hover i,
-	figure.snip1384.hover i {
-	  -webkit-transform: translate(0px, 0px);
-	  transform: translate(0px, 0px);
-	  opacity: 1;
-	}
-        .container {
-            display: inline-block;
-        }
-        .box {
-            position: relative;
+		@import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
+		@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+		@import url('https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap');
 
-        }
-        .top {
-            position: absolute;
-            border: solid 2px black;
-            align-content: center;
-            top: 0;
-            left: 0;
-        }
-        .middle {
-            position: absolute;
-            border: solid 2px black;
-            align-content: center;
-            top: 0;
-            left: 0;
-        }
-        .bottom {
-            position: absolute;
-            border: solid 2px black;
-            align-content: center;
-            top: 0;
-            left: 0;
-        }
-        .bottom_list {
-            border-top: solid 2px black;
-            margin-top: 200px;
-        }
-        .middle_list {
-            border-top: solid 2px black;
-        }
-        .top_list {
-            border-top: solid 2px black;
-        }
-        .part {
-            border: solid 1px gray;
-            display: inline-block;
-        }
-        .part div {
-            text-align: center;
-        }
-	.gibuny {
-	    
-	}
-        
-    </style>
-    <script>
-        
-    </script>
+		body {
+			font-family: 'Do Hyeon', sans-serif;
+			margin: 0;
+		}
+
+		figure.snip1384 {
+			font-family: 'Raleway', Arial, sans-serif;
+			position: relative;
+			overflow: hidden;
+			margin: 10px;
+			min-width: 230px;
+			max-width: 315px;
+			width: 100%;
+			color: #ffffff;
+			text-align: left;
+			font-size: 16px;
+			background-color: #000000;
+		}
+
+		figure.snip1384 * {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			-webkit-transition: all 0.35s ease;
+			transition: all 0.35s ease;
+		}
+
+		figure.snip1384 img {
+			max-width: 100%;
+			backface-visibility: hidden;
+			vertical-align: top;
+		}
+
+		figure.snip1384:after,
+		figure.snip1384 figcaption {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+
+		figure.snip1384:after {
+			content: '';
+			background-color: rgba(0, 0, 0, 0.65);
+			-webkit-transition: all 0.35s ease;
+			transition: all 0.35s ease;
+			opacity: 0;
+		}
+
+		figure.snip1384 figcaption {
+			z-index: 1;
+			padding: 40px;
+		}
+
+		figure.snip1384 h3,
+		figure.snip1384 .links {
+			width: 100%;
+			margin: 5px 0;
+			padding: 0;
+		}
+
+		figure.snip1384 h3 {
+			line-height: 1.1em;
+			font-weight: 700;
+			font-size: 1.4em;
+			text-transform: uppercase;
+			opacity: 0;
+		}
+
+		figure.snip1384 p {
+			font-size: 0.8em;
+			font-weight: 300;
+			letter-spacing: 1px;
+			opacity: 0;
+			top: 50%;
+			-webkit-transform: translateY(40px);
+			transform: translateY(40px);
+		}
+
+		figure.snip1384 i {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			padding: 20px 25px;
+			font-size: 34px;
+			opacity: 0;
+			-webkit-transform: translateX(-10px);
+			transform: translateX(-10px);
+		}
+
+		figure.snip1384 a {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+		}
+
+		figure.snip1384:hover img,
+		figure.snip1384.hover img {
+			zoom: 1;
+			filter: alpha(opacity=50);
+			-webkit-opacity: 0.5;
+			opacity: 0.5;
+		}
+
+		figure.snip1384:hover:after,
+		figure.snip1384.hover:after {
+			opacity: 1;
+			position: absolute;
+			top: 10px;
+			bottom: 10px;
+			left: 10px;
+			right: 10px;
+		}
+
+		figure.snip1384:hover h3,
+		figure.snip1384.hover h3,
+		figure.snip1384:hover p,
+		figure.snip1384.hover p,
+		figure.snip1384:hover i,
+		figure.snip1384.hover i {
+			-webkit-transform: translate(0px, 0px);
+			transform: translate(0px, 0px);
+			opacity: 1;
+		}
+
+		#fixed_container {
+			margin-left: 50%;
+		}
+
+		.container {
+			position: fixed;
+			/*			display: block;*/
+			text-align: right;
+			border: 2px solid #C2828B;
+			border-radius: 15px;
+			padding: 10px;
+			background-color: ghostwhite; 
+/*			#BEF6E9*/
+			color: #35738F;
+			z-index: 1;
+		}
+
+
+		.top {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+
+		.middle {
+			position: absolute;
+			align-content: center;
+			top: 0;
+			left: 0;
+		}
+
+		.bottom {
+			position: absolute;
+			align-content: center;
+			top: 0;
+			left: 0;
+		}
+
+		.promotion {
+			z-index: -1;
+		}
+
+		.bottom_list {
+			border-top: solid 2px black;
+			margin-top: 20px;
+		}
+
+		.middle_list {
+			border-top: solid 2px black;
+		}
+
+		.top_list {
+			border-top: solid 2px black;
+			border-bottom: solid 2px black;
+		}
+
+		.part {
+			border: 2px solid #C2828B;
+			border-radius: 15px;
+			display: inline-block;
+			margin: 5px;
+			text-align: center;
+		}
+
+		.part div {
+			text-align: center;
+		}
+
+		.part input {
+			width: 100%;
+			border: none;
+			border-bottom: 2px solid #C2828B;
+			border-top-left-radius: 15px;
+			border-top-right-radius: 15px;
+			font-family: 'Do Hyeon', sans-serif;
+			font-size: 22px;
+			background-color: #BEF6E9;
+			color: #35738F;
+		}
+
+		.part img {
+			width: 60%;
+			margin: 5px;
+		}
+
+		.subtitle {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		h2 {
+			display: inline;
+			font-size: 30px;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+
+		a {
+			text-decoration: none;
+			display: inline;
+			font-size: 30px;
+			margin-left: 20px;
+			margin-right: 20px;
+			color: black;
+		}
+		
+		#box {
+			position: relative;
+			margin: auto;
+			display: block;
+			width: 142px;
+			height: 142px;
+		}
+
+		#cancel_button {
+			display: inline;
+			width: 100px;
+			border: 2px solid #CE7082;
+			border-radius: 10px;
+			font-family: 'Do Hyeon', sans-serif;
+			font-size: 22px;
+			background-color: #BEF6E9;
+			color: #EF3E4A;
+
+		}
+
+		#bottom_content {
+			display: none;
+		}
+
+		#middle_content {
+			display: none;
+		}
+
+		#top_content {
+			display: none;
+		}
+		
+		#title {
+			text-align: center;
+			color: black;
+			border-bottom: solid 2px black;
+			padding: 30px;
+			background-image: url("http://static.cyphers.co.kr/img/data/back_b_08.jpg");
+			background-repeat:no-repeat;
+			background-size: 100%;
+			margin-bottom: 20px;
+		}
+		
+		#title h1 {
+			font-size: 3em;
+			color: black;
+		}
+/*
+		#save_img {
+			text-align: center;
+		}
+
+		#save_img input {
+
+			margin-top: 10px;
+			width: 60%;
+			border: 2px solid #CE7082;
+			border-radius: 15px;
+			font-family: 'Do Hyeon', sans-serif;
+			font-size: 22px;
+			background-color: #BEF6E9;
+			color: #35738F;
+		}
+*/
+
+	</style>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	<script>
+		function open_content(content, subtitle) {
+			var content = document.getElementById(content);
+			content.style.display = "block";
+			var subtitle = document.getElementById(subtitle);
+			subtitle_HTML = subtitle.innerHTML;
+			subtitle_HTML = subtitle_HTML.replace("▼", "▲");
+			subtitle_HTML = subtitle_HTML.replace("open", "close");
+			subtitle.innerHTML = subtitle_HTML;
+			//			alert(subtitle_HTML);
+		}
+
+		function close_content(content, subtitle) {
+			var content = document.getElementById(content);
+			content.style.display = "none";
+			var subtitle = document.getElementById(subtitle);
+			subtitle_HTML = subtitle.innerHTML;
+			subtitle_HTML = subtitle_HTML.replace("▲", "▼");
+			subtitle_HTML = subtitle_HTML.replace("close", "open");
+			subtitle.innerHTML = subtitle_HTML;
+			//			alert(subtitle_HTML);
+		}
+	</script>
 </head>
+
 <body>
-    <div class="container">
-        <h2>적용 이미지</h2>
-        <div class="box">
-            <div class="bottom"><img id="bottom_img" src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_1_142.png"/></div>
-
-            <div class="middle"><img id="middle_img" src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_1_142.png"/></div>
-            
-            <div class="top"><img id="top_img" src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_1_142.png"/></div>
-        </div>
-    </div>
-
-	<div class="bottom_list">
-	<figure class="snip1384">
-	  <img src="https://lh3.googleusercontent.com/SKAXLbIE1XxmuastOnbHo1zzOoRWFsHoMtpI_dtMXIL6pQ9jHaYBTFRaSH0zxieE3dlo2z5QDhn-izq2gj4k4LpAyM_k6rlGHV9sdaK7mWBuH5fhdGKYJnT3bDBN=w2262" alt="sample83" />
-	  <figcaption>
-	    <h3>Gibuny Clan 홍보</h3>
-	    <p>Cyphers_Gibuny_Clan 가입 신청 설문지입니다. 뒤에 간단한 문제가 있으니 꼼꼼히 살펴 봐주세요. 오답시 아쉽지만 가입 불가합니다ㅜㅠ</p><i class="ion-ios-arrow-right"></i>
-	  </figcaption>
-	  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMyzE4M1f_UExAz4iSPkvoY5ZwNsmfTI86fWlySQREA8hRg/viewform"></a>
-	</figure>
-
-	<h2>1. 배경</h2>
-	    <p>
-        <input type="button" value="선택취소" onclick="document.getElementById('bottom_img').src = '';"/>
-        <div class="part">
-            <div>
-                <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_1_142.png';"/>
-            </div>
-                <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_1_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_2_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_2_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_3_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_3_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_4_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_4_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_5_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_5_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_6_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_6_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_7_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_7_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_8_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_8_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_9_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_9_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_10_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_10_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_11_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_11_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_12_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_12_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_28_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_28_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_13_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_13_142.png"/>
-        </div>
-        </p>
+	<div id="title">
+		<img src="http://static.cyphers.co.kr/img/lnb/logo_new.png">
+		<h1>사이퍼즈 클랜 엠블럼 시뮬레이션</h1>
 	</div>
-	
+	<!--엠블럼 적용 이미지-->
+	<div id="fixed_container">
+		<div class="container">
+			<h2>적용 이미지</h2>
+			<div id="box">
+				<div class="bottom"><img id="bottom_img" src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_1_142.png" /></div>
+				<div class="middle"><img id="middle_img" src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_1_142.png" /></div>
+				<div class="top"><img id="top_img" src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_1_142.png" /></div>
+			</div>
+<!--
+			<div id="save_img">
+				<input id="shot" type="button" value="저장" onclick="save_img()" />
+			</div>
+-->
+		</div>
+	</div>
+
+	<!--기부니 클랜 홍보 시작-->
+	<div class="promotion">
+		<figure class="snip1384">
+			<img src="https://lh3.googleusercontent.com/SKAXLbIE1XxmuastOnbHo1zzOoRWFsHoMtpI_dtMXIL6pQ9jHaYBTFRaSH0zxieE3dlo2z5QDhn-izq2gj4k4LpAyM_k6rlGHV9sdaK7mWBuH5fhdGKYJnT3bDBN=w2262" alt="sample83" />
+			<figcaption>
+				<h3>Gibuny Clan 홍보</h3>
+				<p>Cyphers_Gibuny_Clan 가입 신청 설문지입니다. 뒤에 간단한 문제가 있으니 꼼꼼히 살펴 봐주세요. 오답시 아쉽지만 가입 불가합니다ㅜㅠ</p><i class="ion-ios-arrow-right"></i>
+			</figcaption>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLSeBMyzE4M1f_UExAz4iSPkvoY5ZwNsmfTI86fWlySQREA8hRg/viewform"></a>
+		</figure>
+	</div>
+	<!--기부니 클랜 홍보 끝-->
+
+	<!--바텀 리스트 시작-->
+	<div class="bottom_list">
+		<div class="subtitle">
+			<span id="bottom_title"><a href="javascript:open_content('bottom_content', 'bottom_title');">배경 ▼</a></span>
+			<input id="cancel_button" type="button" value="선택취소" onclick="document.getElementById('bottom_img').src = '';" />
+		</div>
+		<div id="bottom_content">
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_1_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_1_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_2_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_2_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_3_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_3_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_4_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_4_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_5_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_5_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_6_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_6_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_7_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_7_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_8_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_8_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_9_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_9_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_10_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_10_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_11_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_11_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_12_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_12_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_28_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_28_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('bottom_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_13_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/bottom/ce_Bottom_13_142.png" />
+			</div>
+		</div>
+	</div>
+	<!--바텀 리스트 끝-->
+
+	<!--미드 리스트 시작-->
 	<div class="middle_list">
-	<h2>2. 미들</h2>
-        <p>
-        <input type="button" value="선택취소" onclick="document.getElementById('middle_img').src = '';"/>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_1_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_1_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_2_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_2_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_3_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_3_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_4_142.png';"/>
-            </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_4_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_5_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_5_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_6_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_6_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_7_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_7_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_8_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_8_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_9_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_9_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_10_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_10_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_13_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_13_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_14_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_14_142.png"/>
-        </div>
-        <div class="part">
-            <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://pongs.iptime.org:7766/gibuny/emblem/26.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_26_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_35_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_35_142.png"/>
-        </div>
-        </p>
-    </div>
-    
-    <div class="top_list">
-	<h2>3. 문양</h2>
-        <p>
-        <input type="button" value="선택취소" onclick="document.getElementById('top_img').src = '';"/>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_1_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_1_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_2_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_2_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_3_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_3_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_4_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_4_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_5_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_5_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_6_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_6_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_7_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_7_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_8_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_8_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_9_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_9_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_10_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_10_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_11_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_11_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_12_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_12_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_13_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_13_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_14_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_14_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_15_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_15_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_16_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_16_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_17_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_17_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_25_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_25_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_26_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_26_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_27_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_27_142.png"/>
-        </div>
-        <div class="part">
-        <div>
-        <input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_28_142.png';"/>
-        </div>
-        <img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_28_142.png"/>
-        </div>
-        </p>
-    </div>
+		<div class="subtitle">
+			<span id="middle_title"><a href="javascript:open_content('middle_content', 'middle_title');">미드 ▼</a></span>
+			<input id="cancel_button" type="button" value="선택취소" onclick="document.getElementById('middle_img').src = '';" />
+		</div>
+		<div id="middle_content">
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_1_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_1_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_2_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_2_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_3_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_3_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_4_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_4_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_5_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_5_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_6_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_6_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_7_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_7_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_8_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_8_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_9_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_9_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_10_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_10_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_13_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_13_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_14_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_14_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://pongs.iptime.org:7766/gibuny/emblem/26.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_26_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('middle_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_35_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/middle/ce_Middle_35_142.png" />
+			</div>
+		</div>
+	</div>
+	<!--미드 리스트 끝-->
+
+	<!--탑 리스트 시작-->
+	<div class="top_list">
+		<div class="subtitle">
+			<span id="top_title"><a href="javascript:open_content('top_content', 'top_title');">문양 ▼</a></span>
+			<input id="cancel_button" type="button" value="선택취소" onclick="document.getElementById('top_img').src = '';" />
+		</div>
+		<div id="top_content">
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_1_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_1_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_2_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_2_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_3_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_3_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_4_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_4_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_5_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_5_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_6_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_6_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_7_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_7_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_8_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_8_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_9_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_9_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_10_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_10_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_11_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_11_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_12_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_12_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_13_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_13_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_14_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_14_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_15_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_15_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_16_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_16_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_17_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_17_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_25_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_25_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_26_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_26_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_27_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_27_142.png" />
+			</div>
+			<div class="part">
+				<div>
+					<input type="button" value="선택" onclick="document.getElementById('top_img').src = 'http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_28_142.png';" />
+				</div>
+				<img src="http://static.cyphers.co.kr/img/clan/emblem/top/ce_Top_28_142.png" />
+			</div>
+		</div>
+	</div>
+	<!--탑 리스트 끝-->
 
 </body>
+
 </html>
