@@ -16,12 +16,12 @@ body {
 
 .title h1{
     display: inline-block;
-    font-size: 40px;
+    font-size: 30px;
     color: ghostwhite;
     /*background-color: azure;*/
     font-family: 'Righteous', cursive;
     margin: 50px 0;
-    padding: 9px 40px;
+    padding: 10px 50px;
     border: 5px solid black;
     border-top-right-radius: 30px;
     text-shadow: 2px 2px 2px gray;
@@ -29,7 +29,7 @@ body {
 
 .bg_wrapper {
     width: 80%;
-    height: 100%;
+    height: 160%;
     background-color: ghostwhite;
     margin-left: auto;
     margin-right: auto;
@@ -38,10 +38,9 @@ body {
     box-shadow: 5px 5px 5px black;
     padding: 20px;
     text-align: left;
-    overflow: auto;
 }
 
-.bg_wrapper div:not(:first-child) {
+.bg_wrapper div:not(:first-child):not(:last-child) {
     border: 2px solid #36648b;
     margin-bottom: 10px;
     border-radius: 15px;
@@ -63,7 +62,7 @@ body {
     margin-right: auto;
 }
 
-.sub_title  h2:hover {
+.sub_title h2:hover {
     text-align: center;
     border: 2px solid #36648b;
     display: inline-block;
@@ -73,4 +72,52 @@ body {
     margin-right: auto;
     background-color: skyblue;
     color: white;
+}
+
+.con_title {
+	border-radius: 25px;
+	background-color: mediumseagreen;
+	padding: 3px 10px;
+	display: inline-block;
+	color: aliceblue;
+	font-weight: bold;
+	text-shadow: 1px 1px black;
+}
+
+.reward_ul {
+	list-style: none;
+	padding-left: 10px;
+}
+
+.reward_ul li {
+	font-weight: bold;
+}
+
+.footer{
+	vertical-align: middle;
+	text-align: center;
+	border-top: 2px solid gray;
+	margin-top: 30px;
+}
+
+.footer p:first-child {
+	font-weight: bold;
+}
+
+.footer a:nth-child(2) {
+	text-decoration: underline;
+	color: orangered;
+	font-weight: bold;
+}
+
+#donate {
+	display: none;
+	position: relative;
+	bottom: 50px;
+	background-color: mediumseagreen;
+	color: white;
+	text-shadow: 1px 1px black;
+	border-radius: 20px;
+	padding: 10px;
+	text-decoration: none;
 }
