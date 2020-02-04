@@ -1,6 +1,13 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- 부가적인 테마 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        
         <title>Gibuny Event</title>
         <link rel="stylesheet" type="text/css" href="./style.css"/>
         <!--영문 폰트-->
@@ -10,82 +17,117 @@
     </head>
     
     <body>
-        <div class="title">
-            <h1>Gibuny Clan Event</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-1 col-md-2"></div>
+                <div id="title" class="col-sm-10 col-md-8">
+                    <h1>Gibuny Clan Event</h1>
+                </div>
+                <div class="col-sm-1 col-md-2"></div>
+            </div>
         </div>
-        <div class="bg_wrapper">
-            <div class="sub_title">
-                <h2>클랜 파티 활성화 이벤트🥳</h2>
-            </div>
-            <div class="content">
-               <div class="con_title">
-                    이벤트 목적🎀
+        <div id="wrapper" class="container">
+            
+            <div class="row">
+                <div class="col-xs-1 col-sm-2 col-md-3"></div>
+                <div id="sub_title" class="col-xs-10 col-sm-8 col-md-6">
+                    <h2>클랜 파티 활성화 이벤트🥳</h2>
                 </div>
-                <p>
-                클랜 파티 활성화 및 신입 / 기존 유저 유대 강화
-                </p>
+                <div class="col-xs-1 col-sm-2 col-md-3"></div>
             </div>
-            <div class="content">
-                <div class="con_title">
-                    참가 방법🙌
+            
+            <div class="row">
+                <div class="content col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                   <div class="con_title">
+                        이벤트 목적🎀
+                    </div>
+                    <p>
+                    클랜 파티 활성화 및 신입 / 기존 유저 유대 강화
+                    </p>
                 </div>
-				<p>
-                기본적으로 자동 참여. 단, 이벤트 판정 기준 판수 30판 이상 달성한 멤버만 보상 수령 가능
-                </p>
-            </div>
-            <div class="content">
-               <div class="con_title">
-                판정 기준❔
+
+                <div class="content col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="con_title">
+                        참가 방법🙌
+                    </div>
+                    <p>
+                    기본적으로 자동 참여. 단, 이벤트 판정 기준 판수 30판 이상 달성한 멤버만 보상 수령 가능
+                    </p>
                 </div>
-                <p><b>신입 최소 1명 포함</b>의 3인 이상의 클랜 파티로 <b>공식/일반전</b><span id="guqfurwjs">(협력전 등은 안됩니다)</span> 진행. 판수로 순위를 책정합니다.
-                </p>
-            </div>
-            <div class="content">
-                <div class="con_title">
-                    시행 일시📅
+
+                <div class="content col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                   <div class="con_title">
+                    판정 기준❔
+                    </div>
+                    <p><b>신입 최소 1명 포함</b>의 3인 이상의 클랜 파티로 <b>공식/일반전</b><span id="guqfurwjs">(협력전 등은 안됩니다)</span> 진행. 판수로 순위를 책정합니다.
+                    </p>
                 </div>
-                <p>
-                2월8일(<span style="color:red;">토</span>) 00: 00 ~ 2월29일(<span style="color:red;">토</span>) 23:59 (3주)
-                </p>
-            </div>
-            <div class="content">
-                <div class="con_title">
-                집계 방법🦀
+
+                <div class="content col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="con_title">
+                        시행 일시📅
+                    </div>
+                    <p>
+                    2월8일(<span style="color:red;">토</span>) 00: 00 ~ 2월29일(<span style="color:red;">토</span>) 23:59 (3주)
+                    </p>
                 </div>
-                <p>
-                Cyphers API 사용 자동 집계. 이벤트 중 DISCORD의 <b>영데봇</b>을 통해 확인 가능.
-                <!-- 명령어 추가해야 됨 -->
-                </p>
-            </div>
-            <div class="content">
-                <div class="con_title">
-                보상💎 - 1 잇오키도키 / 우울우울 후원
+
+                <div class="content col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="con_title">
+                    집계 방법🦀
+                    </div>
+                    <p>
+                    Cyphers API 사용 자동 집계. 이벤트 중 DISCORD의 <b>영데봇</b>을 통해 확인 가능.
+                    <!-- 명령어 추가해야 됨 -->
+                    </p>
                 </div>
-                <!--보상 확인-->
-                <ul class="reward_ul">
-                    <li>1위 : 3만테라💰</li>
-                    <li>2위 : 2만테라💰</li>
-                    <li>3위 : 1만테라💰</li>
-                </ul>
+
+                <div class="content col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="con_title">
+                    보상💎 - 1 잇오키도키 / 우울우울 후원
+                    </div>
+                    <!--보상 확인-->
+                    <ul class="reward_ul">
+                        <li>1위 : 3만테라💰</li>
+                        <li>2위 : 2만테라💰</li>
+                        <li>3위 : 1만테라💰</li>
+                    </ul>
+                </div>
+
+                <div class="content col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="con_title">
+                    보상💎 - 2 참가 보너스상
+                    </div>
+                    <ul class="reward_ul">
+                        <li>최소 기준 판수(30판)이상 달성한 멤버 중 1~3위 제외 3명을 랜덤으로 추첨하여 기프티콘(예시) 제공</li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 footer">
+                    <p>보상은 후원에 따라 변경 될 수 있습니다.</p>
+                    <a href="javascript:donate();">★후원 환영★</a>
+                </div>
+                <div class="col-xs-12 footer_under">
+                    <a href="javascript:donate();" id="donate">👑우울우울, 씬나씬나, 잇오키도키, 잇오🌠</a>
+                </div>
             </div>
-            <div class="content">
-                <div class="con_title">
-                보상💎 - 2 참가 보너스상
-            	</div>
-            	<ul class="reward_ul">
-					<li>최소 기준 판수(30판)이상 달성한 멤버 중 1~3위 제외 3명을 랜덤으로 추첨하여 기프티콘(예시) 제공</li>
-				</ul>
-        	</div>
-        	<div class="footer">
-                <p>보상은 후원에 따라 변경 될 수 있습니다.</p>
-                <a href="#" onClick="donate();return fasle;">★후원 환영★</a>
-				<a href="#" id="donate">우울우울, 씬나씬나, 잇오키도키, 잇오</a>
-            </div>
+        </div>
 		<script>
 			function donate() {
 				var donate = document.getElementById('donate');
-				donate.style.display = inline-block;
+				var display = $('#donate').css('display');
+                if (display == 'none') {
+                    $('#donate').css('display', 'inline-block');
+                } else {
+                    $('#donate').css('display', 'none');
+                };
 			};
 		</script>
+        <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        
+<!--        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>-->
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     </body>
 </html>
