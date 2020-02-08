@@ -24,18 +24,6 @@ body {
     text-shadow: 3px 3px 2px gray;
 }
 
-@media (min-width:768px) {
-	#title h1{
-	font-size: 40px;
-	color: white;
-	font-family: 'Righteous', cursive;
-	padding: 10px 50px;
-	border: 5px solid black;
-	border-top-right-radius: 30px;
-	text-shadow: 3px 3px 2px gray;
-}
-}
-
 #wrapper {
     background-color: ghostwhite;
     border: 1px solid black;
@@ -43,13 +31,11 @@ body {
     box-shadow: 5px 5px 5px black;
     text-align: left;
 }
-.test {
-    border: 3px solid red;
-}
+
 #sub_title {
     text-align: center;
-    
 }
+
 #sub_title  h2{
     text-align: center;
     font-weight: bold;
@@ -70,15 +56,22 @@ body {
 
 .content p, li{
     margin: 10px;
-    padding: 5px;
-    border-radius: 10px;
+	padding: 5px;
+	border-radius: 10px;
 }
 
-.content p:hover, li:hover {
+.content p:hover {
     margin: 10px;
-    padding: 5px;
-    border-radius: 10px;
-    background: #ced4da;
+	padding: 5px;
+	border-radius: 10px;
+	background: #ced4da;
+}
+
+.content li:hover {
+    margin: 10px;
+	padding: 5px;
+	border-radius: 10px;
+	background: #ced4da;
 }
 
 .con_title {
@@ -105,8 +98,8 @@ body {
 	text-align: center;
 	border-top: 2px solid gray;
 	margin-top: 30px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .footer p:first-child {
@@ -132,3 +125,16 @@ body {
 	padding: 10px;
 	text-decoration: none;
 }
+
+@media (min-width:768px) {
+		#title h1{
+		font-size: 40px;
+		color: white;
+		font-family: 'Righteous', cursive;
+		padding: 10px 50px;
+		border: 5px solid black;
+		border-top-right-radius: 30px;
+		text-shadow: 3px 3px 2px gray;
+	}
+}
+
