@@ -15,12 +15,9 @@ body {
 }
 
 #title h1{
-/*    display: inline-block;*/
     font-size: 30px;
     color: white;
-    /*background-color: azure;*/
     font-family: 'Righteous', cursive;
-/*    margin: 50px auto 0 auto;*/
     padding: 10px 50px;
     border: 5px solid black;
     border-top-right-radius: 30px;
@@ -28,47 +25,27 @@ body {
 }
 
 @media (min-width:768px) {
-    #title h1{
-/*    display: inline-block;*/
-    font-size: 40px;
-    color: white;
-    /*background-color: azure;*/
-    font-family: 'Righteous', cursive;
-/*    margin: 50px auto 0 auto;*/
-    padding: 10px 50px;
-    border: 5px solid black;
-    border-top-right-radius: 30px;
-    text-shadow: 3px 3px 2px gray;
-}
+		#title h1{
+		font-size: 40px;
+		color: white;
+		font-family: 'Righteous', cursive;
+		padding: 10px 50px;
+		border: 5px solid black;
+		border-top-right-radius: 30px;
+		text-shadow: 3px 3px 2px gray;
+	}
 }
 
 #wrapper {
-/*
-    width: 80%;
-    height: 160%;
-*/
     background-color: ghostwhite;
-/*
-    margin-left: auto;
-    margin-right: auto;
-*/
     border: 1px solid black;
     border-radius: 15px;
     box-shadow: 5px 5px 5px black;
-/*    padding: 20px;*/
     text-align: left;
 }
 .test {
     border: 3px solid red;
 }
-/*
-.wrapper div:not(:first-child):not(:last-child) {
-    border: 2px solid #36648b;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    padding: 5px;
-}
-*/
 #sub_title {
     text-align: center;
     
@@ -78,7 +55,6 @@ body {
     font-weight: bold;
     font-size: 20px;
     border: 2px solid #36648b;
-    /*display: inline-block;*/
     padding: 9px 40px;
     border-radius: 15px;
 }
@@ -86,19 +62,23 @@ body {
 #sub_title h2:hover {
     text-align: center;
     border: 2px solid #36648b;
-/*    display: inline-block;*/
     padding: 9px 40px;
     border-radius: 15px;
-/*
-    margin-left: auto;
-    margin-right: auto;
-*/
     background-color: skyblue;
     color: white;
 }
 
 .content p, li{
     margin: 10px;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.content p:hover, li:hover {
+    margin: 10px;
+	padding: 5px;
+	border-radius: 10px;
+	background: #ced4da;
 }
 
 .con_title {
@@ -145,9 +125,6 @@ body {
 }
 #donate {
 	display: none;
-	/*position: relative;*/
-    /*left: auto;*/
-    
 	background-color: mediumseagreen;
 	color: white;
 	text-shadow: 1px 1px black;
