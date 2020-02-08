@@ -25,15 +25,15 @@ body {
 }
 
 @media (min-width:768px) {
-		#title h1{
-		font-size: 40px;
-		color: white;
-		font-family: 'Righteous', cursive;
-		padding: 10px 50px;
-		border: 5px solid black;
-		border-top-right-radius: 30px;
-		text-shadow: 3px 3px 2px gray;
-	}
+	#title h1{
+	font-size: 40px;
+	color: white;
+	font-family: 'Righteous', cursive;
+	padding: 10px 50px;
+	border: 5px solid black;
+	border-top-right-radius: 30px;
+	text-shadow: 3px 3px 2px gray;
+}
 }
 
 #wrapper {
@@ -70,15 +70,15 @@ body {
 
 .content p, li{
     margin: 10px;
-	padding: 5px;
-	border-radius: 10px;
+    padding: 5px;
+    border-radius: 10px;
 }
 
 .content p:hover, li:hover {
     margin: 10px;
-	padding: 5px;
-	border-radius: 10px;
-	background: #ced4da;
+    padding: 5px;
+    border-radius: 10px;
+    background: #ced4da;
 }
 
 .con_title {
@@ -105,8 +105,8 @@ body {
 	text-align: center;
 	border-top: 2px solid gray;
 	margin-top: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .footer p:first-child {
